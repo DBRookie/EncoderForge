@@ -1,0 +1,516 @@
+SET
+    max_parallel_workers_per_gather = 3;
+
+SET
+    statement_timeout = 3600000;
+
+SET
+    enable_mergejoin = off;
+
+SET
+    enable_nestloop = off;
+
+EXPLAIN ANALYZE
+SELECT
+    "occupation_0",
+    "occupation_1",
+    "occupation_2",
+    "occupation_3",
+    "occupation_4",
+    "occupation_5",
+    "occupation_6",
+    "occupation_7",
+    "occupation_8",
+    "occupation_9",
+    "occupation_10",
+    "occupation_11",
+    "occupation_12",
+    "occupation_13",
+    "occupation_14",
+    "education_0",
+    "education_1",
+    "education_2",
+    "education_3",
+    "education_4",
+    "education_5",
+    "education_6",
+    "education_7",
+    "education_8",
+    "education_9",
+    "education_10",
+    "education_11",
+    "education_12",
+    "education_13",
+    "education_14",
+    "education_15",
+    "relationship_0",
+    "relationship_1",
+    "relationship_2",
+    "relationship_3",
+    "relationship_4",
+    "relationship_5",
+    "race_0",
+    "race_1",
+    "race_2",
+    "race_3",
+    "race_4",
+    "sex_0",
+    "sex_1",
+    "age_0" AS "age_0",
+    "age_1" AS "age_1",
+    "age_2" AS "age_2",
+    "age_3" AS "age_3",
+    "age_4" AS "age_4",
+    "age_5" AS "age_5",
+    "age_6" AS "age_6",
+    "age_7" AS "age_7",
+    "age_8" AS "age_8",
+    "age_9" AS "age_9",
+    "age_10" AS "age_10",
+    "age_11" AS "age_11",
+    "age_12" AS "age_12",
+    "age_13" AS "age_13",
+    "fnlwgt_0" AS "fnlwgt_0",
+    "fnlwgt_1" AS "fnlwgt_1",
+    "fnlwgt_2" AS "fnlwgt_2",
+    "fnlwgt_3" AS "fnlwgt_3",
+    "fnlwgt_4" AS "fnlwgt_4",
+    "fnlwgt_5" AS "fnlwgt_5",
+    "fnlwgt_6" AS "fnlwgt_6",
+    "fnlwgt_7" AS "fnlwgt_7",
+    "fnlwgt_8" AS "fnlwgt_8",
+    "fnlwgt_9" AS "fnlwgt_9",
+    "fnlwgt_10" AS "fnlwgt_10",
+    "fnlwgt_11" AS "fnlwgt_11",
+    "fnlwgt_12" AS "fnlwgt_12",
+    "fnlwgt_13" AS "fnlwgt_13",
+    "education_num_0" AS "education_num_0",
+    "education_num_1" AS "education_num_1",
+    "education_num_2" AS "education_num_2",
+    "education_num_3" AS "education_num_3",
+    "education_num_4" AS "education_num_4",
+    "education_num_5" AS "education_num_5",
+    "education_num_6" AS "education_num_6",
+    "education_num_7" AS "education_num_7",
+    "education_num_8" AS "education_num_8",
+    "education_num_9" AS "education_num_9",
+    "education_num_10" AS "education_num_10",
+    "education_num_11" AS "education_num_11",
+    "education_num_12" AS "education_num_12",
+    "education_num_13" AS "education_num_13",
+    "hours_per_week_0" AS "hours_per_week_0",
+    "hours_per_week_1" AS "hours_per_week_1",
+    "hours_per_week_2" AS "hours_per_week_2",
+    "hours_per_week_3" AS "hours_per_week_3",
+    "hours_per_week_4" AS "hours_per_week_4",
+    "hours_per_week_5" AS "hours_per_week_5",
+    "hours_per_week_6" AS "hours_per_week_6",
+    "hours_per_week_7" AS "hours_per_week_7",
+    "hours_per_week_8" AS "hours_per_week_8",
+    "hours_per_week_9" AS "hours_per_week_9",
+    "hours_per_week_10" AS "hours_per_week_10",
+    "hours_per_week_11" AS "hours_per_week_11",
+    "hours_per_week_12" AS "hours_per_week_12",
+    "hours_per_week_13" AS "hours_per_week_13",
+    "capital_gain_0" AS "capital_gain_0",
+    "capital_gain_1" AS "capital_gain_1",
+    "capital_gain_2" AS "capital_gain_2",
+    "capital_gain_3" AS "capital_gain_3",
+    "capital_gain_4" AS "capital_gain_4",
+    "capital_gain_5" AS "capital_gain_5",
+    "capital_gain_6" AS "capital_gain_6",
+    "native_country_0" AS "native_country_0",
+    "native_country_1" AS "native_country_1",
+    "native_country_2" AS "native_country_2",
+    "native_country_3" AS "native_country_3",
+    "native_country_4" AS "native_country_4",
+    "native_country_5" AS "native_country_5",
+    "native_country_6" AS "native_country_6",
+    "native_country_7" AS "native_country_7",
+    "native_country_8" AS "native_country_8",
+    "native_country_9" AS "native_country_9",
+    "native_country_10" AS "native_country_10",
+    "native_country_11" AS "native_country_11",
+    "native_country_12" AS "native_country_12",
+    "native_country_13" AS "native_country_13",
+    "native_country_14" AS "native_country_14",
+    "native_country_15" AS "native_country_15",
+    "native_country_16" AS "native_country_16",
+    "native_country_17" AS "native_country_17",
+    "native_country_18" AS "native_country_18",
+    "native_country_19" AS "native_country_19",
+    "native_country_20" AS "native_country_20",
+    "native_country_21" AS "native_country_21",
+    "native_country_22" AS "native_country_22",
+    "native_country_23" AS "native_country_23",
+    "native_country_24" AS "native_country_24",
+    "native_country_25" AS "native_country_25",
+    "native_country_26" AS "native_country_26",
+    "native_country_27" AS "native_country_27",
+    "native_country_28" AS "native_country_28",
+    "native_country_29" AS "native_country_29",
+    "native_country_30" AS "native_country_30",
+    "native_country_31" AS "native_country_31",
+    "native_country_32" AS "native_country_32",
+    "native_country_33" AS "native_country_33",
+    "native_country_34" AS "native_country_34",
+    "native_country_35" AS "native_country_35",
+    "native_country_36" AS "native_country_36",
+    "native_country_37" AS "native_country_37",
+    "native_country_38" AS "native_country_38",
+    "native_country_39" AS "native_country_39",
+    "native_country_40" AS "native_country_40",
+    "native_country_41" AS "native_country_41",
+    "marital_status_0" AS "marital_status_0",
+    "marital_status_1" AS "marital_status_1",
+    "marital_status_2" AS "marital_status_2",
+    "marital_status_3" AS "marital_status_3",
+    "marital_status_4" AS "marital_status_4",
+    "marital_status_5" AS "marital_status_5",
+    "marital_status_6" AS "marital_status_6",
+    "capital_loss_0" AS "capital_loss_0",
+    "capital_loss_1" AS "capital_loss_1",
+    "capital_loss_2" AS "capital_loss_2",
+    "capital_loss_3" AS "capital_loss_3",
+    "capital_loss_4" AS "capital_loss_4",
+    "capital_loss_5" AS "capital_loss_5",
+    "capital_loss_6" AS "capital_loss_6",
+    "capital_loss_7" AS "capital_loss_7",
+    "capital_loss_8" AS "capital_loss_8",
+    "capital_loss_9" AS "capital_loss_9",
+    "capital_loss_10" AS "capital_loss_10",
+    "capital_loss_11" AS "capital_loss_11",
+    "capital_loss_12" AS "capital_loss_12",
+    "workclass_0" AS "workclass_0",
+    "workclass_1" AS "workclass_1",
+    "workclass_2" AS "workclass_2",
+    "workclass_3" AS "workclass_3",
+    "workclass_4" AS "workclass_4",
+    "workclass_5" AS "workclass_5",
+    "workclass_6" AS "workclass_6",
+    "workclass_7" AS "workclass_7",
+    "workclass_8" AS "workclass_8"
+FROM
+    (
+        SELECT
+            "workclass",
+            "occupation_0",
+            "occupation_1",
+            "occupation_2",
+            "occupation_3",
+            "occupation_4",
+            "occupation_5",
+            "occupation_6",
+            "occupation_7",
+            "occupation_8",
+            "occupation_9",
+            "occupation_10",
+            "occupation_11",
+            "occupation_12",
+            "occupation_13",
+            "occupation_14",
+            "education_0",
+            "education_1",
+            "education_2",
+            "education_3",
+            "education_4",
+            "education_5",
+            "education_6",
+            "education_7",
+            "education_8",
+            "education_9",
+            "education_10",
+            "education_11",
+            "education_12",
+            "education_13",
+            "education_14",
+            "education_15",
+            "marital_status",
+            CASE
+                WHEN "relationship" = ' Husband' THEN 1
+                ELSE 0
+            END AS "relationship_0",
+            CASE
+                WHEN "relationship" = ' Not-in-family' THEN 1
+                ELSE 0
+            END AS "relationship_1",
+            CASE
+                WHEN "relationship" = ' Other-relative' THEN 1
+                ELSE 0
+            END AS "relationship_2",
+            CASE
+                WHEN "relationship" = ' Own-child' THEN 1
+                ELSE 0
+            END AS "relationship_3",
+            CASE
+                WHEN "relationship" = ' Unmarried' THEN 1
+                ELSE 0
+            END AS "relationship_4",
+            CASE
+                WHEN "relationship" = ' Wife' THEN 1
+                ELSE 0
+            END AS "relationship_5",
+            CASE
+                WHEN "race" = ' Amer-Indian-Eskimo' THEN 1
+                ELSE 0
+            END AS "race_0",
+            CASE
+                WHEN "race" = ' Asian-Pac-Islander' THEN 1
+                ELSE 0
+            END AS "race_1",
+            CASE
+                WHEN "race" = ' Black' THEN 1
+                ELSE 0
+            END AS "race_2",
+            CASE
+                WHEN "race" = ' Other' THEN 1
+                ELSE 0
+            END AS "race_3",
+            CASE
+                WHEN "race" = ' White' THEN 1
+                ELSE 0
+            END AS "race_4",
+            CASE
+                WHEN "sex" = ' Male' THEN 0
+                ELSE 1
+            END AS "sex_0",
+            CASE
+                WHEN "sex" = ' Female' THEN 0
+                ELSE 1
+            END AS "sex_1",
+            "native_country",
+            CASE
+                WHEN "age" >= 17.0
+                AND "age" < 22.214285714285715 THEN 0
+                WHEN "age" >= 22.214285714285715
+                AND "age" < 27.42857142857143 THEN 1
+                WHEN "age" >= 27.42857142857143
+                AND "age" < 32.64285714285714 THEN 2
+                WHEN "age" >= 32.64285714285714
+                AND "age" < 37.85714285714286 THEN 3
+                WHEN "age" >= 37.85714285714286
+                AND "age" < 43.07142857142857 THEN 4
+                WHEN "age" >= 43.07142857142857
+                AND "age" < 48.285714285714285 THEN 5
+                WHEN "age" >= 48.285714285714285
+                AND "age" < 53.5 THEN 6
+                WHEN "age" >= 53.5
+                AND "age" < 58.714285714285715 THEN 7
+                WHEN "age" >= 58.714285714285715
+                AND "age" < 63.92857142857143 THEN 8
+                WHEN "age" >= 63.92857142857143
+                AND "age" < 69.14285714285714 THEN 9
+                WHEN "age" >= 69.14285714285714
+                AND "age" < 74.35714285714286 THEN 10
+                WHEN "age" >= 74.35714285714286
+                AND "age" < 79.57142857142857 THEN 11
+                WHEN "age" >= 79.57142857142857
+                AND "age" < 84.78571428571429 THEN 12
+                ELSE 13
+            END AS "age",
+            CASE
+                WHEN "fnlwgt" >= 12285.0
+                AND "fnlwgt" < 117457.85714285714 THEN 0
+                WHEN "fnlwgt" >= 117457.85714285714
+                AND "fnlwgt" < 222630.7142857143 THEN 1
+                WHEN "fnlwgt" >= 222630.7142857143
+                AND "fnlwgt" < 327803.5714285714 THEN 2
+                WHEN "fnlwgt" >= 327803.5714285714
+                AND "fnlwgt" < 432976.4285714286 THEN 3
+                WHEN "fnlwgt" >= 432976.4285714286
+                AND "fnlwgt" < 538149.2857142857 THEN 4
+                WHEN "fnlwgt" >= 538149.2857142857
+                AND "fnlwgt" < 643322.1428571428 THEN 5
+                WHEN "fnlwgt" >= 643322.1428571428
+                AND "fnlwgt" < 748495.0 THEN 6
+                WHEN "fnlwgt" >= 748495.0
+                AND "fnlwgt" < 853667.8571428572 THEN 7
+                WHEN "fnlwgt" >= 853667.8571428572
+                AND "fnlwgt" < 958840.7142857143 THEN 8
+                WHEN "fnlwgt" >= 958840.7142857143
+                AND "fnlwgt" < 1064013.5714285714 THEN 9
+                WHEN "fnlwgt" >= 1064013.5714285714
+                AND "fnlwgt" < 1169186.4285714286 THEN 10
+                WHEN "fnlwgt" >= 1169186.4285714286
+                AND "fnlwgt" < 1274359.2857142857 THEN 11
+                WHEN "fnlwgt" >= 1274359.2857142857
+                AND "fnlwgt" < 1379532.142857143 THEN 12
+                ELSE 13
+            END AS "fnlwgt",
+            CASE
+                WHEN "education_num" >= 1.0
+                AND "education_num" < 2.071428571428571 THEN 0
+                WHEN "education_num" >= 2.071428571428571
+                AND "education_num" < 3.142857142857143 THEN 1
+                WHEN "education_num" >= 3.142857142857143
+                AND "education_num" < 4.214285714285714 THEN 2
+                WHEN "education_num" >= 4.214285714285714
+                AND "education_num" < 5.285714285714286 THEN 3
+                WHEN "education_num" >= 5.285714285714286
+                AND "education_num" < 6.357142857142857 THEN 4
+                WHEN "education_num" >= 6.357142857142857
+                AND "education_num" < 7.428571428571429 THEN 5
+                WHEN "education_num" >= 7.428571428571429
+                AND "education_num" < 8.5 THEN 6
+                WHEN "education_num" >= 8.5
+                AND "education_num" < 9.571428571428571 THEN 7
+                WHEN "education_num" >= 9.571428571428571
+                AND "education_num" < 10.642857142857142 THEN 8
+                WHEN "education_num" >= 10.642857142857142
+                AND "education_num" < 11.714285714285714 THEN 9
+                WHEN "education_num" >= 11.714285714285714
+                AND "education_num" < 12.785714285714285 THEN 10
+                WHEN "education_num" >= 12.785714285714285
+                AND "education_num" < 13.857142857142858 THEN 11
+                WHEN "education_num" >= 13.857142857142858
+                AND "education_num" < 14.928571428571429 THEN 12
+                ELSE 13
+            END AS "education_num",
+            CASE
+                WHEN "capital_gain" >= 0.0
+                AND "capital_gain" < 7142.785714285715 THEN 0
+                WHEN "capital_gain" >= 7142.785714285715
+                AND "capital_gain" < 14285.57142857143 THEN 1
+                WHEN "capital_gain" >= 14285.57142857143
+                AND "capital_gain" < 21428.357142857145 THEN 2
+                WHEN "capital_gain" >= 21428.357142857145
+                AND "capital_gain" < 28571.14285714286 THEN 3
+                WHEN "capital_gain" >= 28571.14285714286
+                AND "capital_gain" < 35713.92857142857 THEN 4
+                WHEN "capital_gain" >= 35713.92857142857
+                AND "capital_gain" < 42856.71428571429 THEN 5
+                WHEN "capital_gain" >= 42856.71428571429
+                AND "capital_gain" < 49999.5 THEN 6
+                WHEN "capital_gain" >= 49999.5
+                AND "capital_gain" < 57142.28571428572 THEN 7
+                WHEN "capital_gain" >= 57142.28571428572
+                AND "capital_gain" < 64285.071428571435 THEN 8
+                WHEN "capital_gain" >= 64285.071428571435
+                AND "capital_gain" < 71427.85714285714 THEN 9
+                WHEN "capital_gain" >= 71427.85714285714
+                AND "capital_gain" < 78570.64285714286 THEN 10
+                WHEN "capital_gain" >= 78570.64285714286
+                AND "capital_gain" < 85713.42857142858 THEN 11
+                WHEN "capital_gain" >= 85713.42857142858
+                AND "capital_gain" < 92856.21428571429 THEN 12
+                ELSE 13
+            END AS "capital_gain",
+            CASE
+                WHEN "capital_loss" >= 0.0
+                AND "capital_loss" < 311.14285714285717 THEN 0
+                WHEN "capital_loss" >= 311.14285714285717
+                AND "capital_loss" < 622.2857142857143 THEN 1
+                WHEN "capital_loss" >= 622.2857142857143
+                AND "capital_loss" < 933.4285714285716 THEN 2
+                WHEN "capital_loss" >= 933.4285714285716
+                AND "capital_loss" < 1244.5714285714287 THEN 3
+                WHEN "capital_loss" >= 1244.5714285714287
+                AND "capital_loss" < 1555.7142857142858 THEN 4
+                WHEN "capital_loss" >= 1555.7142857142858
+                AND "capital_loss" < 1866.8571428571431 THEN 5
+                WHEN "capital_loss" >= 1866.8571428571431
+                AND "capital_loss" < 2178.0 THEN 6
+                WHEN "capital_loss" >= 2178.0
+                AND "capital_loss" < 2489.1428571428573 THEN 7
+                WHEN "capital_loss" >= 2489.1428571428573
+                AND "capital_loss" < 2800.2857142857147 THEN 8
+                WHEN "capital_loss" >= 2800.2857142857147
+                AND "capital_loss" < 3111.4285714285716 THEN 9
+                WHEN "capital_loss" >= 3111.4285714285716
+                AND "capital_loss" < 3422.571428571429 THEN 10
+                WHEN "capital_loss" >= 3422.571428571429
+                AND "capital_loss" < 3733.7142857142862 THEN 11
+                WHEN "capital_loss" >= 3733.7142857142862
+                AND "capital_loss" < 4044.857142857143 THEN 12
+                ELSE 13
+            END AS "capital_loss",
+            CASE
+                WHEN "hours_per_week" >= 1.0
+                AND "hours_per_week" < 8.0 THEN 0
+                WHEN "hours_per_week" >= 8.0
+                AND "hours_per_week" < 15.0 THEN 1
+                WHEN "hours_per_week" >= 15.0
+                AND "hours_per_week" < 22.0 THEN 2
+                WHEN "hours_per_week" >= 22.0
+                AND "hours_per_week" < 29.0 THEN 3
+                WHEN "hours_per_week" >= 29.0
+                AND "hours_per_week" < 36.0 THEN 4
+                WHEN "hours_per_week" >= 36.0
+                AND "hours_per_week" < 43.0 THEN 5
+                WHEN "hours_per_week" >= 43.0
+                AND "hours_per_week" < 50.0 THEN 6
+                WHEN "hours_per_week" >= 50.0
+                AND "hours_per_week" < 57.0 THEN 7
+                WHEN "hours_per_week" >= 57.0
+                AND "hours_per_week" < 64.0 THEN 8
+                WHEN "hours_per_week" >= 64.0
+                AND "hours_per_week" < 71.0 THEN 9
+                WHEN "hours_per_week" >= 71.0
+                AND "hours_per_week" < 78.0 THEN 10
+                WHEN "hours_per_week" >= 78.0
+                AND "hours_per_week" < 85.0 THEN 11
+                WHEN "hours_per_week" >= 85.0
+                AND "hours_per_week" < 92.0 THEN 12
+                ELSE 13
+            END AS "hours_per_week"
+        FROM
+            (
+                SELECT
+                    "workclass",
+                    "occupation_0" AS "occupation_0",
+                    "occupation_1" AS "occupation_1",
+                    "occupation_2" AS "occupation_2",
+                    "occupation_3" AS "occupation_3",
+                    "occupation_4" AS "occupation_4",
+                    "occupation_5" AS "occupation_5",
+                    "occupation_6" AS "occupation_6",
+                    "occupation_7" AS "occupation_7",
+                    "occupation_8" AS "occupation_8",
+                    "occupation_9" AS "occupation_9",
+                    "occupation_10" AS "occupation_10",
+                    "occupation_11" AS "occupation_11",
+                    "occupation_12" AS "occupation_12",
+                    "occupation_13" AS "occupation_13",
+                    "occupation_14" AS "occupation_14",
+                    "education_0" AS "education_0",
+                    "education_1" AS "education_1",
+                    "education_2" AS "education_2",
+                    "education_3" AS "education_3",
+                    "education_4" AS "education_4",
+                    "education_5" AS "education_5",
+                    "education_6" AS "education_6",
+                    "education_7" AS "education_7",
+                    "education_8" AS "education_8",
+                    "education_9" AS "education_9",
+                    "education_10" AS "education_10",
+                    "education_11" AS "education_11",
+                    "education_12" AS "education_12",
+                    "education_13" AS "education_13",
+                    "education_14" AS "education_14",
+                    "education_15" AS "education_15",
+                    "marital_status",
+                    "relationship",
+                    "race",
+                    "sex",
+                    "native_country",
+                    "age",
+                    "fnlwgt",
+                    "education_num",
+                    "capital_gain",
+                    "capital_loss",
+                    "hours_per_week"
+                FROM
+                    adult
+                    left join merged_occupation_education_table on adult."occupation" = merged_occupation_education_table."occupation"
+                    AND adult."education" = merged_occupation_education_table."education"
+            ) AS data
+    ) AS data
+    left join merged_capital_loss_workclass_table on data."capital_loss" = merged_capital_loss_workclass_table."capital_loss"
+    AND data."workclass" = merged_capital_loss_workclass_table."workclass"
+    left join merged_capital_gain_native_country_marital_status_table on data."capital_gain" = merged_capital_gain_native_country_marital_status_table."capital_gain"
+    AND data."native_country" = merged_capital_gain_native_country_marital_status_table."native_country"
+    AND data."marital_status" = merged_capital_gain_native_country_marital_status_table."marital_status"
+    left join merged_age_fnlwgt_table on data."age" = merged_age_fnlwgt_table."age"
+    AND data."fnlwgt" = merged_age_fnlwgt_table."fnlwgt"
+    left join merged_education_num_hours_per_week_table on data."education_num" = merged_education_num_hours_per_week_table."education_num"
+    AND data."hours_per_week" = merged_education_num_hours_per_week_table."hours_per_week"

@@ -1,0 +1,13 @@
+.vscode/
+.mypy_cache/
+*.pdf
+__pycache__/
+!*.pkl
+*.log
+*.joblib
+*.csv
+*.zip
+merge
+test_lmx/
+.ipynb_checkpoints/
+temp_save/
