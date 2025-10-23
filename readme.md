@@ -1,5 +1,4 @@
-# EncoderForge: High-Efficiency SQL Generation for ML Pipelines
-
+# EncoderForge: Generating Efficient SQL for Encoders in Machine Learning Inference Pipelines
 ## Project Introduction
 
 EncoderForge is a tool to generate highly efficient SQL queries from trained ML pipelines. It allows pipelines trained in Python to be executed natively in databases with high efficiency, supporting different DBMS like DuckDB, PostgreSQL.
