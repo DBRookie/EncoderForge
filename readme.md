@@ -191,4 +191,4 @@ psql db_name postgres
 - `encoderforge/preprocess/` directory contains the definitions of supported preprocessing operators.
 - `encoderforge/optimizer/` directory contains the logic for translation plan selection strategies.
 - `encoderforge/utility/` directory contains utility functions and the definition of preprocessing operators wrapped by encoderforge.
-- `encoderforge/transformer_manager.py` file contains the entry function `TransformerManager.generate_query()`, which includes the SQL assembly logic.
+- `encoderforge/transformer_manager.py` file contains the entry function `TransformerManager.generate_query()`, which implements the logic of generating the complete SQL query according to the selected translation plan.
