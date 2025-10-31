@@ -21,24 +21,12 @@ FROM
             0.497459505282944 :: float * "DayofWeek" :: float - 1.98911100629868 :: float AS "DayofWeek",
             0.023370767290347 :: float * "Altitude_m" :: float - 1.05903940830843 :: float AS "Altitude_m",
             0.0853502010931776 :: float * "PM_10" :: float - 1.27192567278553 :: float AS "PM_10",
-            "Zone",
             "Site_Name",
-CASE
-                WHEN "Environment_Type" = 'Background Rural' THEN 1
-                ELSE 0
-            END AS "Environment_Type_0",
-CASE
-                WHEN "Environment_Type" = 'Background Urban' THEN 1
-                ELSE 0
-            END AS "Environment_Type_1",
-CASE
-                WHEN "Environment_Type" = 'Industrial Urban' THEN 1
-                ELSE 0
-            END AS "Environment_Type_2",
-CASE
-                WHEN "Environment_Type" = 'Traffic Urban' THEN 1
-                ELSE 0
-            END AS "Environment_Type_3"
+            "Zone",
+            "Environment_Type_0",
+            "Environment_Type_1",
+            "Environment_Type_2",
+            "Environment_Type_3"
         FROM
             (
                 SELECT
@@ -47,12 +35,16 @@ CASE
                     "DayofWeek",
                     "Altitude_m",
                     "PM_10",
-                    "zone_cat_c_cat_col" AS "Zone",
                     "site_name_cat_c_cat_col" AS "Site_Name",
-                    "Environment_Type"
+                    "zone_cat_c_cat_col" AS "Zone",
+                    "environment_type_0" AS "Environment_Type_0",
+                    "environment_type_1" AS "Environment_Type_1",
+                    "environment_type_2" AS "Environment_Type_2",
+                    "environment_type_3" AS "Environment_Type_3"
                 FROM
                     ukair
-                    left join merged_zone_site_name_table on ukair."Zone" = merged_zone_site_name_table."zone"
-                    AND ukair."Site_Name" = merged_zone_site_name_table."site_name"
+                    left join merged_site_name_zone_environment_type_table on ukair."Site_Name" = merged_site_name_zone_environment_type_table."site_name"
+                    AND ukair."Zone" = merged_site_name_zone_environment_type_table."zone"
+                    AND ukair."Environment_Type" = merged_site_name_zone_environment_type_table."environment_type"
             ) AS data
     ) AS data

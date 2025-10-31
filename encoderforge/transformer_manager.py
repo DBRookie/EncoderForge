@@ -9,7 +9,7 @@ from concurrent.futures import ProcessPoolExecutor
 
 from encoderforge.base.graph import PrepGraph
 from encoderforge.base.plan import ChainCandidateFusionPlans, ChainCandidateImplementPlans
-from encoderforge.rule_based_optimize.merge import *
+from encoderforge.optimizer.merge import *
 from encoderforge.cost_model.merge import merge_by_cost_model
 from encoderforge.cost_model.utils import get_pg_sql_cost, get_encoderforge_graph_cost, get_encoderforge_graph_cost_multiv, get_group_cost
 from encoderforge.utility.loader import load_model
@@ -20,7 +20,7 @@ from encoderforge.preprocess.one_hot_encoder import OneHotEncoderSQLOperator
 from encoderforge.preprocess.binary_encoder import BinaryEncoderSQLOperator
 from collections import defaultdict
 from encoderforge.cost_model.ml_model_space import load_h2o_context, load_autoluon
-from encoderforge.rule_based_optimize.dp import *
+from encoderforge.optimizer.dp import *
 from encoderforge.base.func import mapping_key
 
 def task(

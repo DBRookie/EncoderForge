@@ -6,7 +6,7 @@ from encoderforge.model.base_model import TreeModel
 from encoderforge.base.graph import PrepGraph, PrepChain
 from encoderforge.base.plan import ChainImplementPlan, ChainFusionPlan
 from encoderforge.base.operator import *
-from encoderforge.rule_based_optimize.merge_property import PropertyManager
+from encoderforge.optimizer.merge_property import PropertyManager
 import encoderforge.base.defs as defs
 # from encoderforge.utility.join_utils import merge_db
 from itertools import combinations

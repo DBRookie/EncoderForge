@@ -1,7 +1,7 @@
 from encoderforge.base.graph import PrepGraph
 from collections import defaultdict
 from encoderforge.cost_model.utils import *
-from encoderforge.rule_based_optimize.merge import *
+from encoderforge.optimizer.merge import *
 from encoderforge.base import defs
 import bisect
 
