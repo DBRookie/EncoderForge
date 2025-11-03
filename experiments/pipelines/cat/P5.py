@@ -167,7 +167,7 @@ save_model(pipeline, pipeline_save_path)
 #         test_vals = set(X_test[col].dropna().unique())
 #         unseen_vals = test_vals - train_vals
 #         if unseen_vals:
-#             print(f"⚠️ 特征 '{col}' 中测试集存在未见过的类别: {sorted(unseen_vals)}")
+#             print(f"⚠️  '{col}' : {sorted(unseen_vals)}")
             
 # detect_unseen_categories(X,X_test)
 

@@ -907,7 +907,7 @@ def ss_fusion(graph: PrepGraph) -> PrepGraph:
         update_merge_ops(feature2, merge2[1], [merge1[1][0],global_operator])
         update_merge_ops(feature1, merge1[1], [merge2[1][0],global_operator])
             
-        # 补长 prep_operatos和merge_operators
+        #  prep_operatosmerge_operators
         index_f2 = new_prep_graph.chains[feature2].prep_operators.index(op2)
         if index_f2 < max_lenth:
             new_prep_graph.chains[feature2].prep_operators.insert(index_f2,None)
@@ -952,7 +952,7 @@ def apply_fusion_plan(graph: PrepGraph, fusion_plan):
     for feature, chain in graph.chains.items():
         new_graph.chains[feature].merge_operators = copy.deepcopy(chain.merge_operators)
         new_graph.chains[feature].prep_operators = copy.deepcopy(chain.prep_operators) 
-        new_graph.implements[feature] = copy.deepcopy(graph.implements[feature]) # 一定是join目前
+        new_graph.implements[feature] = copy.deepcopy(graph.implements[feature]) # join
     
     def set_inter_merge(op, chain_ops):
         if hasattr(op, 'inter_merge'):

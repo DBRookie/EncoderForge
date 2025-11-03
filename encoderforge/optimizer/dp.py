@@ -339,7 +339,7 @@ def sort_join_fusion(graph: PrepGraph, table_size):
         elif priority == "size":
             return get_size
         else:
-            return lambda x: 0  # 不排序
+            return lambda x: 0  # 
 
     def insert_sorted(component, new_item, priority):
         """priority based place new_item into component true place"""
@@ -371,7 +371,7 @@ def sort_join_fusion(graph: PrepGraph, table_size):
                 component = component[2:]
                 component = insert_sorted(component, merged_group, priority)
             else:
-                # 无法合并
+                # 
                 return component
         return component
 

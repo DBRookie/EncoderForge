@@ -910,7 +910,7 @@ class EXPAND(EncoderOperator):
         #         if c in used_columns 
         #     ]
         # )
-        # 修 input_table和feature_sql
+        #  input_tablefeature_sql
         
         if len(self.weight) > 0:
             join_feature = [f"{DBMSUtils.get_delimited_col(dbms, c.lower())}::float * {self.weight[c.lower()]:.6f}::float AS {DBMSUtils.get_delimited_col(dbms, c)}" for c in self.mapping.columns.tolist()]
@@ -2000,7 +2000,7 @@ class MultiFeatureEncoderMerged(EncoderOperator):
         
         # table
         # python_join(dbms, merged_table_name)
-        db_join(dbms, merged_table_name) # 可以直接在算子合并的时候做
+        db_join(dbms, merged_table_name) # 
         
         # merge condition
         join_conditions = []

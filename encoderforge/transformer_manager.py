@@ -666,9 +666,9 @@ class TransformerManager(object):
             min_cost_preprocessing_graph = None
             total_plan_num = 0
                         
-            # 遍历所有 implement 和 fusion 组合
+            #  implement  fusion 
             for graph_implement_plan in enumerate_graph_implement_plans():
-                # 执行 implement
+                #  implement
                 current_graph = implement_operator_by_plan(preprocessing_graph, graph_implement_plan)
                 current_graph = fs_fusion(current_graph) # all_merge
                 cost = get_encoderforge_graph_cost(current_graph, data_rows)
@@ -677,7 +677,7 @@ class TransformerManager(object):
                     min_cost = cost
                 
             t1 = time.time()
-            min_cost_query_str = self.__compose_sql(min_cost_preprocessing_graph, table_name, dbms, pre_sql, pipeline) #插表！！
+            min_cost_query_str = self.__compose_sql(min_cost_preprocessing_graph, table_name, dbms, pre_sql, pipeline) #！！
             t2 = time.time()
             print(f'intra sql generate time: {(t2 - t1):.4f} s', flush=True)
 
@@ -699,9 +699,9 @@ class TransformerManager(object):
             min_cost_preprocessing_graph = None
             total_plan_num = 0
                         
-            # 遍历所有 implement 和 fusion 组合
+            #  implement  fusion 
             for graph_implement_plan in enumerate_graph_implement_plans():
-                # 执行 implement
+                #  implement
                 current_graph = implement_operator_by_plan(preprocessing_graph, graph_implement_plan)
                 # current_graph = fs_fusion(current_graph) # intra_merge
                 # inter_merge_all
@@ -769,22 +769,22 @@ class TransformerManager(object):
             min_cost_preprocessing_graph = None
             total_plan_num = 0
             
-            # 遍历所有 implement 和 fusion 组合
+            #  implement  fusion 
             for graph_implement_plan in enumerate_graph_implement_plans():
-                # 执行 implement
+                #  implement
                 current_graph = implement_operator_by_plan(preprocessing_graph, graph_implement_plan)
                 
                 # current_graph = fs_fusion(current_graph) # all_merge
                 
                 '''stage2 enumerate'''
-                # 使用改进后的枚举策略
+                # 
                 def enumerate_join_fusion_plans(graph: PrepGraph):
-                    """基于图结构枚举所有可能的 join 融合方案，按分组大小从小到大枚举"""
+                    """ join ，"""
                     op_nodes, op_graph = legal_joins(graph)
                     connected_components = find_connected_components(op_nodes, op_graph)
                         
                     for component in connected_components:
-                        # 只考虑大小大于1的连通分量
+                        # 1
                         if len(component) >= 2:
                             all_partitions = []
                             for partition in generate_bell_partitions(component):
@@ -793,11 +793,11 @@ class TransformerManager(object):
                                     all_partitions.append(valid_groups)
                         
                             all_partitions.sort(key=lambda x: max(len(group) for group in x))
-                            # 按顺序yield排序后的分组
+                            # yield
                             for partition in all_partitions:
                                 yield partition
                     
-                # 不合并
+                # 
                 merged_graph = current_graph
                 total_plan_num += 1
                 if cost_model == 'encoderforge':
@@ -814,7 +814,7 @@ class TransformerManager(object):
                     merged_graph = apply_fusion_plan(current_graph, fusion_plan)
                     total_plan_num += 1
                         
-                    # 计算成本 tofix 
+                    #  tofix 
                     if cost_model == 'encoderforge':
                         # if len(fusion_plan) == 1:
                         #     pass
@@ -856,9 +856,9 @@ class TransformerManager(object):
             min_cost_preprocessing_graph = None
             total_plan_num = 0
             
-            # 遍历所有 implement 和 fusion 组合
+            #  implement  fusion 
             for graph_implement_plan in enumerate_graph_implement_plans():
-                # 执行 implement
+                #  implement
                 current_graph = implement_operator_by_plan(preprocessing_graph, graph_implement_plan)
                 
                 # current_graph = fs_fusion(current_graph) # all_merge
@@ -892,9 +892,9 @@ class TransformerManager(object):
             min_cost_preprocessing_graph = None
             total_plan_num = 0
             
-            # 遍历所有 implement 和 fusion 组合
+            #  implement  fusion 
             for graph_implement_plan in enumerate_graph_implement_plans():
-                # 执行 implement
+                #  implement
                 current_graph = implement_operator_by_plan(preprocessing_graph, graph_implement_plan)
                 
                 # current_graph = fs_fusion(current_graph) # all_merge

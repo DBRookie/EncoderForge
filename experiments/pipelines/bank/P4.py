@@ -149,15 +149,15 @@ insert_encoders_table_to_db(pipeline)
 
 # X_test = X_test[all_cols]
 
-# 检测未知类别
+# 
 # def detect_unseen_categories(X_train, X_test):
-#     print("检查测试集中是否存在训练集未观测类别...\n")
+#     print("...\n")
 #     for col in X_train.columns:
 #         train_vals = set(X_train[col].dropna().unique())
 #         test_vals = set(X_test[col].dropna().unique())
 #         unseen_vals = test_vals - train_vals
 #         if unseen_vals:
-#             print(f"特征 '{col}' 中测试集存在未观測类别: {sorted(unseen_vals)}")
+#             print(f" '{col}' : {sorted(unseen_vals)}")
 
 # detect_unseen_categories(X, X_test)
 

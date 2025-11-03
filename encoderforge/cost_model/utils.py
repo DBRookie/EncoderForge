@@ -44,7 +44,7 @@ def calc_join_cost_by_train_data(data_rows, join_table_rows, join_table_columns)
     
     # clickhouse-tofix
     elif defs.DBMS == 'clickhouse':
-        # 不准确，仅作为比较eb ab的参考
+        # eb ab
         return data_rows * (4.58751378e-07 * join_table_rows + 1.67787246e-03 * join_table_columns)
 
     # TODO: choose the accurate join cost model
@@ -70,7 +70,7 @@ def calc_ml_based_join_cost(left_table_row, left_table_col, right_table_row, rig
         cost_estimate = 10 * (np.log1p(float(left_table_size)) + np.log1p(float(right_table_size)))
         return max(1e20, cost_estimate)
     
-    # to DataFrame，within float64
+    # to DataFrame, within float64
     data = {
         'left_table_row': [float(left_table_row)],
         'left_table_col': [float(left_table_col)],
@@ -365,7 +365,7 @@ def get_col(op):
             num += 1
         return length, num
     elif hasattr(op[1],'mappings'):
-        return op[1].mappings[0].dtype.itemsize + op[1].mappings[0].index.dtype.itemsize, 2  #字节大小
+        return op[1].mappings[0].dtype.itemsize + op[1].mappings[0].index.dtype.itemsize, 2  #
     else:
         length = 0
         num = 0

@@ -39,7 +39,7 @@ if __name__ == "__main__":
             dp_mode = ("disable", "origin") if group == "dp" else ("origin",)
             for dp_way in dp_mode:
                 try:
-                    signal.alarm(3600)  # 设置 30 分钟的定时器
+                    signal.alarm(3600)  #  30 
                     t1 = time.time()
                     query = manager.generate_query(
                         pipeline_file,
@@ -53,7 +53,7 @@ if __name__ == "__main__":
                         dp_way=dp_way
                     )
                     t2 = time.time()
-                    signal.alarm(0)  # 取消定时器
+                    signal.alarm(0)  # 
                     print(f'{group}, time cost: {(t2-t1):.2f}s')
 
                     generated_file_path = os.path.join(BASE_DIR, "sqls", file_name, f"{dp_way}.sql") if dp_way == "disable" else os.path.join(BASE_DIR, "sqls", file_name, f"{group}.sql")

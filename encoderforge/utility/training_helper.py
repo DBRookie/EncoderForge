@@ -804,7 +804,7 @@ def insert_encoders_table_to_db(pipeline):
                         cols = {feature.lower(): df_type2db_type(op.mapping.index.dtype,defs.DBMS) if defs.DBMS!='tidb' else DBDataType.VARCHAR512.value}
                         for col in op.mapping.columns:
                             cols[col.lower()] = df_type2db_type(op.mapping[col].dtype, defs.DBMS)
-                        if len(cols) <= 1:  # 只有feature列
+                        if len(cols) <= 1:  # feature
                             continue
                         data = []
                         used_cols = [col for col in op.mapping.columns]
